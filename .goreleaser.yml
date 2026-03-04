@@ -1,0 +1,45 @@
+version: 2
+
+project_name: ninjops
+
+builds:
+  - id: ninjops
+    binary: ninjops
+    main: ./cmd/ninjops
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - id: ninjops
+    ids:
+      - ninjops
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    formats:
+      - tar.gz
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
+
+checksum:
+  name_template: checksums.txt
+
+brews:
+  - name: ninjops
+    repository:
+      owner: v1truv1us
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    directory: Formula
+    homepage: https://github.com/v1truv1us/ninjops
+    description: Agentic CLI orchestration for Invoice Ninja quote/invoice workflows
+    license: MIT
+    test: |
+      system "#{bin}/ninjops", "--help"

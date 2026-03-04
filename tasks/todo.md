@@ -338,3 +338,18 @@
 - `list` now uses Invoice Ninja find helpers for filtered entities and paginates tasks robustly (including `FindTasksByClient` path and `--limit`-bounded aggregation).
 - Added focused app tests (reader threading, relationship validation/derivation, conflict/error propagation, list helper usage + pagination) and invoiceninja tests (`FindTasksByClient` and client filter helper).
 - Verified with `go test ./internal/app ./internal/invoiceninja` and `go test ./...` (both passing).
+
+## Task Plan: Homebrew install + release automation
+
+- [x] Add GoReleaser config for cross-platform archives and Homebrew tap publishing.
+- [x] Add tag-triggered GitHub Actions release workflow to run GoReleaser.
+- [x] Update README install/release docs for Homebrew usage and tag-based releases.
+- [x] Document required `HOMEBREW_TAP_GITHUB_TOKEN` secret for release workflow.
+- [x] Run `go test ./...` and run cheap GoReleaser validation if available.
+
+### Results
+
+- Added `.goreleaser.yml` with multi-OS/multi-arch builds (`linux`, `darwin`, `windows`; `amd64`, `arm64`), archives, checksums, and Homebrew formula publishing to `v1truv1us/homebrew-tap`.
+- Added `.github/workflows/release.yml` to trigger on tag pushes `v*` and run GoReleaser with `GITHUB_TOKEN` plus `HOMEBREW_TAP_GITHUB_TOKEN`.
+- Updated `README.md` installation docs with Homebrew tap/install commands, corrected source/release URLs to `v1truv1us/ninjops`, and documented tag-based release flow + required secret.
+- Verified with `go test ./...` and `goreleaser check`.

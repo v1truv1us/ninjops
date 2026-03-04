@@ -16,14 +16,21 @@ A production-ready, test-driven Go CLI for agentic orchestration of Invoice Ninj
 ### From Source
 
 ```bash
-git clone https://github.com/ninjops/ninjops.git
+git clone https://github.com/v1truv1us/ninjops.git
 cd ninjops
 make install
 ```
 
+### Homebrew
+
+```bash
+brew tap v1truv1us/tap
+brew install ninjops
+```
+
 ### Download Binary
 
-Download from [Releases](https://github.com/ninjops/ninjops/releases)
+Download from [Releases](https://github.com/v1truv1us/ninjops/releases)
 
 ### Docker
 
@@ -477,6 +484,14 @@ make lint
 # Run all checks
 make ci
 ```
+
+### Releases
+
+- Releases are cut from Git tags matching `v*` (example: `v0.1.0`).
+- Tag pushes trigger the GitHub Actions release workflow, which runs GoReleaser and publishes:
+  - GitHub release artifacts
+  - Homebrew formula updates to `v1truv1us/homebrew-tap`
+- Required repository secret for formula publishing: `HOMEBREW_TAP_GITHUB_TOKEN` (a token with push access to `v1truv1us/homebrew-tap`).
 
 ## Security
 
