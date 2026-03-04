@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "reference": "ninjops:f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "created_at": "2024-01-15T09:00:00Z",
+    "updated_at": "2024-01-15T09:00:00Z"
+  },
+  "client": {
+    "name": "Grace Community Church",
+    "email": "admin@gracecommunity.org",
+    "phone": "(555) 234-5678",
+    "org_type": "church",
+    "address": {
+      "line1": "456 Faith Avenue",
+      "city": "Springfield",
+      "state": "IL",
+      "postal_code": "62701",
+      "country": "US"
+    }
+  },
+  "project": {
+    "name": "Church Website & Event Management System",
+    "description": "Modern website with event management, sermon archive, and member directory for a growing church community",
+    "type": "website",
+    "timeline": "4-6 weeks",
+    "technologies": ["WordPress", "PHP", "MySQL", "JavaScript"]
+  },
+  "work": {
+    "features": [
+      {
+        "name": "Modern Responsive Website",
+        "description": "Clean, accessible website design that works on all devices with easy navigation for all age groups",
+        "priority": "high",
+        "category": "Design"
+      },
+      {
+        "name": "Event Management System",
+        "description": "Calendar and event registration system for church events, Bible studies, and community gatherings",
+        "priority": "high",
+        "category": "Development"
+      },
+      {
+        "name": "Sermon Archive",
+        "description": "Searchable archive of past sermons with audio/video playback and notes",
+        "priority": "medium",
+        "category": "Development"
+      },
+      {
+        "name": "Staff & Leadership Directory",
+        "description": "Directory of pastors, staff, and church leadership with contact information",
+        "priority": "low",
+        "category": "Development"
+      },
+      {
+        "name": "Online Giving Integration",
+        "description": "Secure online giving portal integrated with existing church management system",
+        "priority": "medium",
+        "category": "Integration"
+      }
+    ],
+    "responsibilities": [
+      "Design and development of all website pages",
+      "Responsive design accessible on all devices",
+      "Integration with existing church management tools",
+      "Training for church staff on content updates"
+    ],
+    "minor_changes": [
+      "Text and image updates",
+      "Color scheme adjustments",
+      "Minor layout tweaks"
+    ],
+    "out_of_scope": [
+      "Sunday service live streaming setup",
+      "Church management software (CCB, etc.)",
+      "Physical signage design",
+      "Marketing or outreach campaigns"
+    ],
+    "assumptions": [
+      "Church will provide all content, images, and sermon media",
+      "Church will provide feedback within 5 business days",
+      "Existing hosting will be used or new hosting will be arranged separately"
+    ]
+  },
+  "pricing": {
+    "total": 3500,
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Website Design & Development",
+        "quantity": 1,
+        "rate": 1500,
+        "amount": 1500,
+        "category": "Design"
+      },
+      {
+        "description": "Event Management System",
+        "quantity": 1,
+        "rate": 800,
+        "amount": 800,
+        "category": "Development"
+      },
+      {
+        "description": "Sermon Archive",
+        "quantity": 1,
+        "rate": 600,
+        "amount": 600,
+        "category": "Development"
+      },
+      {
+        "description": "Staff Directory & Giving Integration",
+        "quantity": 1,
+        "rate": 400,
+        "amount": 400,
+        "category": "Development"
+      },
+      {
+        "description": "Training & Documentation",
+        "quantity": 1,
+        "rate": 200,
+        "amount": 200,
+        "category": "Support"
+      }
+    ],
+    "discount": {
+      "type": "friends_and_family",
+      "percentage": 15,
+      "description": "Friends & Family discount"
+    },
+    "deposit": {
+      "percentage": 25,
+      "due_date": "Upon acceptance"
+    },
+    "payment_terms": "Net 15",
+    "recurring": {
+      "type": "hosting",
+      "amount": 50,
+      "frequency": "monthly",
+      "description": "Managed WordPress hosting with updates and backups"
+    }
+  },
+  "settings": {
+    "tone": "professional",
+    "include_timeline": true,
+    "include_pricing": true
+  }
+}

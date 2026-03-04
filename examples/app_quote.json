@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "reference": "ninjops:c7d8e9f0-1234-5678-9abc-def012345678",
+    "created_at": "2024-01-15T11:00:00Z",
+    "updated_at": "2024-01-15T11:00:00Z"
+  },
+  "client": {
+    "name": "TechStart Inc.",
+    "email": "dev@techstart.io",
+    "phone": "(555) 456-7890",
+    "org_type": "business",
+    "address": {
+      "line1": "100 Innovation Drive",
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78701",
+      "country": "US"
+    }
+  },
+  "project": {
+    "name": "TaskFlow - Project Management Web Application",
+    "description": "Full-stack project management application with real-time collaboration, task tracking, and team communication features",
+    "type": "web application",
+    "timeline": "12-16 weeks",
+    "deadline": "2024-05-01",
+    "technologies": ["React", "Node.js", "PostgreSQL", "WebSocket", "Redis", "AWS"]
+  },
+  "work": {
+    "features": [
+      {
+        "name": "User Authentication & Teams",
+        "description": "Secure authentication with SSO options, team creation, and role-based permissions",
+        "priority": "high",
+        "category": "Development",
+        "tasks": [
+          "Email/password authentication",
+          "Google/Microsoft SSO",
+          "Team management UI",
+          "Role and permission system"
+        ]
+      },
+      {
+        "name": "Project & Task Management",
+        "description": "Core functionality for creating projects, tasks, subtasks with assignments and due dates",
+        "priority": "high",
+        "category": "Development",
+        "tasks": [
+          "Project CRUD operations",
+          "Task creation and editing",
+          "Drag-and-drop task boards",
+          "Due date and assignment management"
+        ]
+      },
+      {
+        "name": "Real-time Collaboration",
+        "description": "Live updates across all connected clients with presence indicators",
+        "priority": "high",
+        "category": "Development",
+        "tasks": [
+          "WebSocket integration",
+          "Live cursor/presence",
+          "Real-time task updates",
+          "Conflict resolution"
+        ]
+      },
+      {
+        "name": "Team Communication",
+        "description": "In-app messaging, comments on tasks, and @mentions",
+        "priority": "medium",
+        "category": "Development",
+        "tasks": [
+          "Direct messaging",
+          "Task comments thread",
+          "@mentions and notifications",
+          "Message search"
+        ]
+      },
+      {
+        "name": "Dashboard & Analytics",
+        "description": "Team dashboard with progress tracking, burndown charts, and activity feeds",
+        "priority": "medium",
+        "category": "Development",
+        "tasks": [
+          "Team overview dashboard",
+          "Progress visualization",
+          "Activity timeline",
+          "Export reports"
+        ]
+      },
+      {
+        "name": "File Attachments",
+        "description": "File upload and attachment system with preview support",
+        "priority": "low",
+        "category": "Development",
+        "tasks": [
+          "S3 integration",
+          "Image/document preview",
+          "Drag-and-drop upload",
+          "File versioning"
+        ]
+      }
+    ],
+    "responsibilities": [
+      "Full-stack development of all features",
+      "Database design and optimization",
+      "API design and documentation",
+      "Security implementation and review",
+      "Performance optimization",
+      "Testing and quality assurance",
+      "Deployment and DevOps setup"
+    ],
+    "minor_changes": [
+      "UI text and label changes",
+      "Color theme adjustments",
+      "Minor workflow tweaks",
+      "Small bug fixes"
+    ],
+    "out_of_scope": [
+      "Mobile applications (iOS/Android)",
+      "Desktop application",
+      "Email client integration",
+      "Calendar sync (Google/Outlook)",
+      "Time tracking features",
+      "Invoice/billing generation"
+    ],
+    "assumptions": [
+      "Client will provide detailed requirements and user stories",
+      "Client will provide UI/UX designs or approve mockups",
+      "Client will provide feedback within 2 business days",
+      "AWS account will be provided for deployment",
+      "Third-party integrations limited to specified SSO providers"
+    ]
+  },
+  "pricing": {
+    "total": 45000,
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Authentication & Team Management",
+        "quantity": 1,
+        "rate": 5000,
+        "amount": 5000,
+        "category": "Development"
+      },
+      {
+        "description": "Project & Task Management Core",
+        "quantity": 1,
+        "rate": 8000,
+        "amount": 8000,
+        "category": "Development"
+      },
+      {
+        "description": "Real-time Collaboration System",
+        "quantity": 1,
+        "rate": 7000,
+        "amount": 7000,
+        "category": "Development"
+      },
+      {
+        "description": "Team Communication & Notifications",
+        "quantity": 1,
+        "rate": 5000,
+        "amount": 5000,
+        "category": "Development"
+      },
+      {
+        "description": "Dashboard & Analytics",
+        "quantity": 1,
+        "rate": 4000,
+        "amount": 4000,
+        "category": "Development"
+      },
+      {
+        "description": "File Attachments & Storage",
+        "quantity": 1,
+        "rate": 3000,
+        "amount": 3000,
+        "category": "Development"
+      },
+      {
+        "description": "Testing & QA",
+        "quantity": 1,
+        "rate": 5000,
+        "amount": 5000,
+        "category": "Quality Assurance"
+      },
+      {
+        "description": "DevOps & Deployment",
+        "quantity": 1,
+        "rate": 4000,
+        "amount": 4000,
+        "category": "Infrastructure"
+      },
+      {
+        "description": "Project Management",
+        "quantity": 1,
+        "rate": 4000,
+        "amount": 4000,
+        "category": "Management"
+      }
+    ],
+    "deposit": {
+      "percentage": 30,
+      "due_date": "Upon acceptance"
+    },
+    "payment_terms": "Net 15, milestone-based",
+    "recurring": {
+      "type": "support",
+      "amount": 100,
+      "frequency": "monthly",
+      "description": "Maintenance, updates, and priority support"
+    }
+  },
+  "settings": {
+    "tone": "formal",
+    "include_timeline": true,
+    "include_pricing": true
+  }
+}

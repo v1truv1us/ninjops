@@ -1,0 +1,66 @@
+run:
+  timeout: 5m
+  issues-exit-code: 1
+
+linters:
+  enable:
+    - gofmt
+    - govet
+    - errcheck
+    - staticcheck
+    - gosimple
+    - ineffassign
+    - typecheck
+    - unused
+    - gocritic
+    - gosec
+    - misspell
+    - prealloc
+    - bodyclose
+    - noctx
+    - exportloopref
+
+linters-settings:
+  govet:
+    enable-all: true
+  
+  gofmt:
+    simplify: true
+  
+  gosec:
+    excludes:
+      - G104 # Audit errors not checked
+      - G304 # File path provided as taint input
+
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+    disabled-checks:
+      - dupImport
+      - ifElseChain
+      - octalLiteral
+      - whyNoLint
+      - wrapperFunc
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gosec
+        - gocritic
+    
+    - path: internal/app/
+      linters:
+        - gochecknoglobals
+    
+    - linters:
+        - staticcheck
+      text: "SA1019:"
+
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  new: false

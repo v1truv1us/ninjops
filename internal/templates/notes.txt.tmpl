@@ -1,0 +1,27 @@
+Project: {{.Project.Name}}
+Client: {{.Client.Name}}
+Type: {{.Project.Type}}
+{{- if .Project.Timeline}}
+Timeline: {{.Project.Timeline}}
+{{- end}}
+
+Reference: {{.Metadata.Reference}}
+Generated: {{.Metadata.CreatedAt.Format "2006-01-02"}}
+
+---
+
+SCOPE SUMMARY
+
+{{range .Work.Features}}
+• {{.Name}}: {{.Description}}
+{{- end}}
+
+{{- if .Pricing.Recurring}}
+
+ONGOING: {{.Pricing.Recurring.Amount}} {{.Pricing.Currency}}/{{.Pricing.Recurring.Frequency}}
+{{- end}}
+
+{{- if .Pricing.Total}}
+
+TOTAL: {{.Pricing.Total}} {{.Pricing.Currency}}
+{{- end}}

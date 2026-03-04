@@ -1,0 +1,48 @@
+# Secrets and credentials - NEVER COMMIT THESE
+.env
+.env.*
+*.env
+auth-creds.json
+*_creds.json
+*_credentials*.json
+*_secrets*.json
+api_key*.txt
+*.pem
+*.key
+
+# User-specific ninjops config (may contain secrets in legacy format)
+.ninjops/
+
+# Build artifacts
+bin/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test artifacts
+coverage.out
+coverage.html
+*.test
+*.prof
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp

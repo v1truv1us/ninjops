@@ -1,0 +1,136 @@
+# {{.Project.Name}}
+
+## Overview
+
+This proposal is prepared for **{{.Client.Name}}**, a {{.OrgTypeWording}}, for the development of {{.Project.Name}}.
+
+{{.Project.Description}}
+
+## Project Details
+
+**Project Type:** {{.Project.Type}}
+{{- if .Project.Timeline}}
+
+**Timeline:** {{.Project.Timeline}}
+{{- end}}
+{{- if .Project.Deadline}}
+
+**Target Deadline:** {{.Project.Deadline}}
+{{- end}}
+{{- if .Project.Technologies}}
+
+### Technologies
+
+{{range .Project.Technologies}}
+- {{.}}
+{{- end}}
+{{- end}}
+
+## Scope of Work
+
+### Features
+
+{{range .Work.Features}}
+#### {{.Name}}
+
+{{.Description}}
+{{- if .Tasks}}
+
+**Tasks:**
+{{range .Tasks}}
+- {{.}}
+{{- end}}
+{{- end}}
+{{- end}}
+
+{{- if .Work.Responsibilities}}
+
+### Our Responsibilities
+
+{{range .Work.Responsibilities}}
+- {{.}}
+{{- end}}
+{{- end}}
+
+{{- if .Work.MinorChanges}}
+
+### Minor Changes & Tweaks
+
+The following minor changes are included within the project scope:
+
+{{range .Work.MinorChanges}}
+- {{.}}
+{{- end}}
+{{- end}}
+
+{{- if .Work.OutOfScope}}
+
+### Out of Scope
+
+The following items are explicitly **not** included in this proposal:
+
+{{range .Work.OutOfScope}}
+- {{.}}
+{{- end}}
+{{- end}}
+
+{{- if .Work.Assumptions}}
+
+### Assumptions
+
+{{range .Work.Assumptions}}
+- {{.}}
+{{- end}}
+{{- end}}
+
+{{- if .Settings.IncludePricing}}
+
+## Investment
+
+### Project Cost
+
+| Item | Description | Amount |
+|------|-------------|--------|
+{{range .Pricing.LineItems}}| {{.Description}} | {{.Quantity}} x {{.Rate}} {{$.Pricing.Currency}} | {{.Amount}} {{$.Pricing.Currency}} |
+{{- end}}
+{{- if .Pricing.Discount}}
+
+**Discount:** {{if .Pricing.Discount.Percentage}}{{.Pricing.Discount.Percentage}}%{{else}}{{.Pricing.Discount.Amount}} {{.Pricing.Currency}}{{end}} {{if .Pricing.Discount.Description}}({{.Pricing.Discount.Description}}){{end}}
+{{- end}}
+
+**Total Project Cost:** {{.Pricing.Total}} {{.Pricing.Currency}}
+
+{{- if .Pricing.Deposit}}
+
+### Deposit
+
+A deposit of **{{if .Pricing.Deposit.Percentage}}{{.Pricing.Deposit.Percentage}}%{{else}}{{.Pricing.Deposit.Amount}} {{.Pricing.Currency}}{{end}}** is required to commence work{{if .Pricing.Deposit.DueDate}}, due by {{.Pricing.Deposit.DueDate}}{{end}}.
+{{- end}}
+
+{{- if .Pricing.Recurring}}
+
+### Ongoing Services
+
+{{.Pricing.Recurring.Description}}: **{{.Pricing.Recurring.Amount}} {{.Pricing.Currency}}** ({{.Pricing.Recurring.Frequency}})
+{{- end}}
+
+{{- if .Pricing.PaymentTerms}}
+
+### Payment Terms
+
+{{.Pricing.PaymentTerms}}
+{{- end}}
+{{- end}}
+
+## Next Steps
+
+1. Review this proposal and reach out with any questions
+2. Confirm acceptance of the scope and investment
+3. Sign the agreement and pay the deposit (if applicable)
+4. We'll schedule a kickoff meeting to begin the project
+
+---
+
+**Proposal Reference:** {{.Metadata.Reference}}
+**Generated:** {{.Metadata.CreatedAt.Format "2006-01-02"}}
+**Valid Until:** {{.Metadata.CreatedAt.AddDate 0 1 0 | formatDate "2006-01-02"}}

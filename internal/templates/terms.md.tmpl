@@ -1,0 +1,102 @@
+# Terms & Conditions
+
+## Agreement
+
+This proposal constitutes an agreement between **{{.Client.Name}}** ("Client") and the service provider ("Provider") for the services described herein.
+
+## Project Terms
+
+### 1. Scope
+
+The scope of work is defined in the "Scope of Work" section of this proposal. Any work outside this scope will require a change order and may incur additional charges.
+
+### 2. Timeline
+
+{{- if .Project.Timeline}}
+
+Estimated timeline: **{{.Project.Timeline}}**
+
+{{- end}}
+
+Timelines are estimates and may change based on:
+- Client responsiveness and feedback turnaround
+- Changes to project scope
+- Availability of required resources or assets from Client
+- Technical complexities discovered during development
+
+### 3. Client Responsibilities
+
+To ensure project success, Client agrees to:
+- Provide timely feedback and approvals (within 3 business days unless otherwise agreed)
+- Supply necessary content, assets, and access credentials
+- Designate a single point of contact for project decisions
+- Review and test deliverables promptly
+- Make payments according to the agreed schedule
+
+### 4. Revisions & Changes
+
+{{- if .Work.MinorChanges}}
+
+Minor changes and tweaks are included as outlined in the proposal.
+{{- end}}
+
+Major changes or additions to scope will be quoted separately and require written approval before proceeding.
+
+### 5. Intellectual Property
+
+Upon full payment:
+- Client owns all custom work created specifically for this project
+- Provider retains rights to reusable components, frameworks, and tools
+- Third-party libraries remain under their respective licenses
+
+### 6. Confidentiality
+
+Both parties agree to keep confidential information shared during this project private and not disclose it to third parties without written consent.
+
+### 7. Warranties
+
+Provider warrants that services will be performed in a professional manner. This warranty does not cover:
+- Issues caused by third-party services or software
+- Changes made by Client or third parties
+- Force majeure events
+
+### 8. Limitation of Liability
+
+Provider's total liability under this agreement shall not exceed the total project fees paid. Provider is not liable for indirect, incidental, or consequential damages.
+
+### 9. Termination
+
+Either party may terminate this agreement with 14 days written notice. Client will pay for all work completed up to termination date. Deposit is non-refundable after work commences.
+
+### 10. Payment Terms
+
+{{- if .Pricing.PaymentTerms}}
+
+{{.Pricing.PaymentTerms}}
+{{- else}}
+
+Payment is due within 14 days of invoice date.
+{{- end}}
+
+{{- if .Pricing.Deposit}}
+
+A deposit of {{if .Pricing.Deposit.Percentage}}{{.Pricing.Deposit.Percentage}}%{{else}}{{.Pricing.Deposit.Amount}} {{.Pricing.Currency}}{{end}} is required to commence work.
+{{- end}}
+
+Late payments may incur a 1.5% monthly service charge.
+
+### 11. Independent Contractor
+
+Provider is an independent contractor. This agreement does not create a partnership, employment, or joint venture relationship.
+
+### 12. Governing Law
+
+This agreement shall be governed by the laws of the jurisdiction in which Provider is located.
+
+## Acceptance
+
+By accepting this proposal, Client agrees to these terms and the project scope outlined herein.
+
+---
+
+**Reference:** {{.Metadata.Reference}}

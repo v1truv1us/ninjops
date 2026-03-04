@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "reference": "ninjops:a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z"
+  },
+  "client": {
+    "name": "Summit Financial Advisors",
+    "email": "info@summitfinancial.com",
+    "phone": "(555) 890-1234",
+    "org_type": "business",
+    "address": {
+      "line1": "789 Corporate Plaza, Suite 400",
+      "city": "Chicago",
+      "state": "IL",
+      "postal_code": "60601",
+      "country": "US"
+    }
+  },
+  "project": {
+    "name": "Professional Brochure Website",
+    "description": "Clean, professional website for financial advisory firm with team bios, services overview, and contact information",
+    "type": "website",
+    "timeline": "2-3 weeks",
+    "technologies": ["React", "Gatsby", "Contentful"]
+  },
+  "work": {
+    "features": [
+      {
+        "name": "Homepage with Value Proposition",
+        "description": "Professional homepage showcasing firm's expertise and approach to financial planning",
+        "priority": "high",
+        "category": "Design"
+      },
+      {
+        "name": "Services Pages",
+        "description": "Detailed pages for each service offering: retirement planning, investment management, estate planning",
+        "priority": "high",
+        "category": "Design"
+      },
+      {
+        "name": "Team Bios",
+        "description": "Professional profiles for all advisors with credentials and specialties",
+        "priority": "medium",
+        "category": "Design"
+      },
+      {
+        "name": "Contact Form",
+        "description": "Secure contact form with appointment scheduling integration",
+        "priority": "high",
+        "category": "Development"
+      },
+      {
+        "name": "Blog/Insights Section",
+        "description": "Financial insights and market commentary blog",
+        "priority": "low",
+        "category": "Development"
+      }
+    ],
+    "responsibilities": [
+      "Design and development of all pages",
+      "Mobile-responsive design",
+      "Basic SEO optimization",
+      "Performance optimization for fast loading"
+    ],
+    "minor_changes": [
+      "Text updates",
+      "Image swaps",
+      "Minor style adjustments"
+    ],
+    "out_of_scope": [
+      "Financial calculators or tools",
+      "Client portal functionality",
+      "CRM integration",
+      "Compliance review of content"
+    ],
+    "assumptions": [
+      "Client will provide all professional headshots and bio content",
+      "Client will provide feedback within 2 business days",
+      "Client has necessary compliance approvals for content"
+    ]
+  },
+  "pricing": {
+    "total": 2800,
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Homepage Design & Development",
+        "quantity": 1,
+        "rate": 800,
+        "amount": 800,
+        "category": "Design"
+      },
+      {
+        "description": "Services & Team Pages",
+        "quantity": 1,
+        "rate": 700,
+        "amount": 700,
+        "category": "Design"
+      },
+      {
+        "description": "Contact Form & Blog",
+        "quantity": 1,
+        "rate": 500,
+        "amount": 500,
+        "category": "Development"
+      },
+      {
+        "description": "Responsive Design & SEO",
+        "quantity": 1,
+        "rate": 400,
+        "amount": 400,
+        "category": "Development"
+      },
+      {
+        "description": "Testing & Launch",
+        "quantity": 1,
+        "rate": 400,
+        "amount": 400,
+        "category": "Quality Assurance"
+      }
+    ],
+    "deposit": {
+      "percentage": 50,
+      "due_date": "Upon acceptance"
+    },
+    "payment_terms": "Net 15",
+    "recurring": {
+      "type": "hosting",
+      "amount": 35,
+      "frequency": "monthly",
+      "description": "Managed hosting with SSL and CDN"
+    }
+  },
+  "settings": {
+    "tone": "formal",
+    "include_timeline": true,
+    "include_pricing": true
+  }
+}
