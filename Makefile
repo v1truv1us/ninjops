@@ -4,6 +4,7 @@ BINARY_NAME=ninjops
 MAIN_PATH=./cmd/ninjops
 GO=go
 GOFLAGS=-v
+GOBIN_DIR=$(shell $(GO) env GOPATH)/bin
 
 all: build
 
@@ -34,7 +35,8 @@ fmt:
 	gofmt -s -w .
 
 install: build
-	cp bin/$(BINARY_NAME) $(GOPATH)/bin/
+	mkdir -p $(GOBIN_DIR)
+	cp bin/$(BINARY_NAME) $(GOBIN_DIR)/
 
 ci: fmt lint test
 

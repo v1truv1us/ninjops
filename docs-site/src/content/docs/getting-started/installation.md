@@ -27,20 +27,25 @@ Available platforms:
 - Linux (amd64, arm64)
 - Windows
 
-After downloading, make the binary executable and move it to your PATH:
+After downloading an archive, extract it, then move `ninjops` to your PATH:
 
 ```bash
+tar -xzf ninjops_*.tar.gz
 chmod +x ninjops
 sudo mv ninjops /usr/local/bin/
 ```
 
 ## Docker
 
-Pull and run the official Docker image:
+Build and run from the local `Dockerfile`:
+
+Requires a running Docker daemon.
 
 ```bash
-docker pull ghcr.io/ninjops/ninjops:latest
-docker run -p 8080:8080 ghcr.io/ninjops/ninjops:latest
+git clone https://github.com/v1truv1us/ninjops.git
+cd ninjops
+docker build -t ninjops:latest .
+docker run --rm -p 8080:8080 ninjops:latest
 ```
 
 ## From Source
@@ -63,15 +68,14 @@ make install
 This will:
 1. Download dependencies
 2. Build the binary
-3. Run tests
-4. Install `ninjops` to your `$GOPATH/bin`
+3. Install `ninjops` to your Go bin directory (`$(go env GOPATH)/bin`)
 
 ## Verify Installation
 
 After installation, verify that Ninjops is working:
 
 ```bash
-ninjops version
+ninjops --version
 ```
 
 You should see the version information printed to the console.

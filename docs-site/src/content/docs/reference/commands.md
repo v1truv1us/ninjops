@@ -31,7 +31,7 @@ Complete reference of all Ninjops CLI commands, organized by workflow phase.
 - `ninjops new invoice` - Create invoices
 - `ninjops convert` - Convert quotes to invoices
 
-- `ninjops version` - Show version information
+- `ninjops --version` - Show version information
 
 - `ninjops help` - Show help information
 - `ninjops completion` - Generate shell completion scripts
@@ -291,7 +291,7 @@ Complete reference of all Ninjops CLI commands, organized by workflow phase.
 - ninjops new invoice
 - ninjops convert
 
-- ninjops version
+- ninjops --version
  - ninjops help
  - ninjops completion
  - ninjops docs
@@ -526,4 +526,3 @@ Complete reference of all Ninjops CLI commands, organized by workflow phase.
 - `ninjops report-child` - No (not implemented)
 - `ninjops report-siblings` - No (not implemented)
 - `ninjops report-parent` - No (not implemented)
-

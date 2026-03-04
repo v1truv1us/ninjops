@@ -38,9 +38,19 @@ Download from [Releases](https://github.com/v1truv1us/ninjops/releases)
 
 ### Docker
 
+Requires a running Docker daemon.
+
 ```bash
-docker pull ghcr.io/ninjops/ninjops:latest
-docker run -p 8080:8080 ghcr.io/ninjops/ninjops:latest
+git clone https://github.com/v1truv1us/ninjops.git
+cd ninjops
+docker build -t ninjops:latest .
+docker run --rm -p 8080:8080 ninjops:latest
+```
+
+### Verify Installation
+
+```bash
+ninjops --version
 ```
 
 ## Quick Start
