@@ -1,0 +1,10 @@
+---
+title: Favicon
+ description: Simple ninja-themed favicon for ninjops documentation
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <circle cx="64" cy="64" r="60" fill="#4f46e5"/>
+  <path d="M24,44 0 0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, 0)" rotate(0deg) translate(0, 5)" stroke="#6366f1" stroke-width="6" fill="#6366f1"/>
+</svg>
+</svg>

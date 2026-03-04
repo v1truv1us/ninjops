@@ -1,0 +1,13 @@
+:root {
+  --sl-color-accent: #4f46e5;
+  --sl-color-accent-high: #6366f1;
+  --sl-color-accent-low: #4338ca;
+}
+
+.hero {
+  padding: 4rem 2rem;
+}
+
+pre {
+  border-radius: 8px;
+}

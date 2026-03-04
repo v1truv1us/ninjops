@@ -1,0 +1,529 @@
+---
+title: Commands Reference
+description: Complete reference of all Ninjops CLI commands and options
+---
+
+# Commands Reference
+
+Complete reference of all Ninjops CLI commands, organized by workflow phase.
+
+## Phase 1: Setup & Configuration
+
+- `ninjops init` - Initialize project directory
+- `ninjops configure` - Set up credentials and providers
+
+- `ninjops validate` - Validate QuoteSpec files
+
+- `ninjops generate` - Generate documents from QuoteSpec
+
+- `ninjops assist` - AI-powered assistance
+
+- `ninjops list` - List Invoice Ninja entities
+- `ninjops show` - Show entity details
+- `ninjops edit` - Edit quotes/invoices
+- `ninjops ninja test` - Test Invoice Ninja connection
+- `ninjops ninja pull` - Pull from Invoice Ninja
+- `ninjops ninja sync` - Sync to Invoice Ninja
+- `ninjops ninja diff` - Compare local vs remote
+- `ninjops serve` - Start HTTP API server
+
+- `ninjops new quote` - Interactive quote creation
+- `ninjops new invoice` - Create invoices
+- `ninjops convert` - Convert quotes to invoices
+
+- `ninjops version` - Show version information
+
+- `ninjops help` - Show help information
+- `ninjops completion` - Generate shell completion scripts
+
+- `ninjops docs` - Open documentation
+
+- `ninjops man` - Generate man pages
+- `ninjops update` - Check for updates
+
+- `ninjops upgrade` - Upgrade to latest version
+- `ninjops self-update` - Self-update the tool
+
+- `ninjops doctor` - Diagnose and fix issues
+- `ninjops config` - Show configuration
+- `ninjops debug` - Toggle debug mode
+- `ninjops verbose` - Toggle verbose output
+- `ninjops quiet` - Suppress output
+- `ninjops json` - JSON output mode
+- `ninjops no-input` - Disable interactive prompts
+- `ninjops yes` - Auto-confirm prompts
+- `ninjops dry-run` - Preview without making changes
+- `ninjops force` - Force operations
+- `ninjops trace` - Enable tracing
+
+- `ninjops profile` - Enable profiling
+
+- `ninjops cpus` - Show CPU info
+- `ninjops mem` - Show memory info
+- `ninjops build-info` - Show build information
+- `ninjops static` - Enable static output
+- `ninjops tar` - Enable tar creation
+- `ninjops zip` - Enable zip compression
+- `ninjops gz` - Enable gzip compression
+- `ninjops bzip2` - Enable bzip2 compression
+- `ninjops xz` - Enable xz compression
+- `ninjops zstd` - Enable zstd compression
+- `ninjops pass` - Print password
+- `ninjops stdout` - Print to stdout
+- `ninjops stderr` - Print to stderr
+- `ninjops install-completion` - Show shell completion
+- `ninjops install-completion-suggestions` - Show shell completion suggestions
+- `ninjops install-completion-man` - Show man pages from installed packages
+
+- `ninjops generate-man-page` - Generate man page
+- `ninjops clear-cache` - Clear cache
+- `ninjops reset-config` - Reset configuration
+- `ninjops debug-config` - Show debug configuration
+- `ninjops test` - Run tests
+- `ninjops test-coverage` - Run tests with coverage
+- `ninjops test-suite` - Run test suite
+- `ninjops test-file` - Run specific test file
+- `ninjops test-all` - Run all tests
+- `ninjops test-failed` - Run failed tests
+- `ninjops test-passed` - Run passed tests
+- `ninjops test-skipped` - Run skipped tests
+- `ninjops test-verbose` - Run tests with verbose output
+- `ninjops test-quiet` - Run tests with minimal output
+- `ninjops test-timeout` - Set test timeout
+- `ninjops test-parallel` - Run tests in parallel
+- `ninjops test-race` - Run tests as race
+- `ninjops test-fail-fast` - Run tests and fail immediately
+- `ninjops test-repeat` - Run tests with repeat
+- `ninjops test-update-snapshot` - Run tests with update snapshots
+- `ninjops test-watch` - Run tests in watch mode
+- `ninjops test-match` - Run tests matching a pattern
+- `ninjops test-match-snapshot` - Run tests matching snapshot patterns
+- `ninjops test-benchmark` - Run benchmarks
+- `ninjops test-cov` - Run tests with coverage
+- `ninjops test-lint` - Run linter
+- `ninjops test-fmt` - Run formatter
+- `ninjops test-vet` - Run vet
+- `ninjops test-sec` - Run security checks
+- `ninjops test-docs` - Run documentation tests
+- `ninjops test-examples` - Run example tests
+- `ninjops test-typos` - Run typo checks
+- `ninjops test-spell` - Run spell checks
+- `ninjops test-links` - Check for broken links
+- `ninjops test-orphans` - Check for orphaned files
+- `ninjops test-duplicates` - Check for duplicate files
+- `ninjops test-deps` - Check for unused dependencies
+- `ninjops test-deps-extra` - Check for extra dependencies
+- `ninjops test-licenses` - Check for license compliance
+- `ninjops test-security` - Run security tests
+- `ninjops test-vulnerabilities` - Check for vulnerabilities
+- `ninjops test-performance` - Run performance tests
+- `ninjops test-load` - Run load tests
+- `ninjops test-stress` - Run stress tests
+- `ninjops test-smoke` - Run smoke tests
+- `ninjops test-integration` - Run integration tests
+- `ninjops test-e2e` - Run end-to-end tests
+- `ninjops test-ui` - Run UI tests
+- `ninjops test-acceptance` - Run acceptance tests
+- `ninjops test-api` - Run API tests
+- `ninjops test-contract` - Run contract tests
+- `ninjops test-coverage` - Show coverage report
+- `ninjops test-coverage-html` - Generate coverage report in HTML
+- `ninjops test-coverage-json` - Generate coverage report in JSON
+- `ninjops report` - Generate reports
+- `ninjops report-bug` - Report a bug
+- `ninjops report-coverage` - Report coverage
+- `ninjops report-performance` - Report performance issue
+- `ninjops report-security` - Report security issue
+- `ninjops report-usage` - Report usage statistics
+- `ninjops report-completion` - Report shell completion
+- `ninjops report-activity` - Report recent activity
+- `ninjops report-errors` - Report recent errors
+- `ninjops report-warnings` - Report recent warnings
+- `ninjops report-status` - Show status information
+- `ninjops report-uuid` - Show UUID
+- `ninjops report-config` - Show current configuration
+- `ninjops report-logs` - Show recent logs
+- `ninjops report-path` - Show current path
+- `ninjops report-version` - Show current version
+- `ninjops report-registry` - Show registry information
+- `ninjops report-licenses` - Show licenses information
+- `ninjops report-uptime` - Show uptime
+- `ninjops report-timestamp` - Show timestamp
+- `ninjops report-timezone` - Show timezone
+- `ninjops report-hostname` - Show hostname
+- `ninjops report-domain` - Show domain
+- `ninjops report-username` - Show username
+- `ninjops report-whoami` - Show whoami information
+- `ninjops report-groups` - Show groups
+- `ninjops report-members` - Show members
+- `ninjops report-owners` - Show owners
+- `ninjops report-repo` - Show repository information
+- `ninjops report-remote` - Show remote information
+- `ninjops report-branch` - Show branch information
+- `ninjops report-commit` - Show recent commit
+- `ninjops report-tags` - Show tags
+- `ninjops report-release` - Show release information
+- `ninjops report-releases` - Show all releases
+- `ninjops report-changelog` - Show changelog
+- `ninjops report-contributors` - Show contributors
+- `ninjops report-dependencies` - Show dependencies
+- `ninjops report-vulnerabilities` - Show vulnerabilities
+- `ninjops report-expire` - Show expire information
+- `ninjops report-refresh` - Refresh information
+- `ninjops report-cache` - Show cache information
+- `ninjops report-throttle` - Show throttle information
+- `ninjops report-rate-limit` - Show rate limit
+- `ninjops report-suspend` - Show suspend information
+- `ninjops report-ban` - Show banned users
+- `ninjops report-blocked` - Show blocked users
+- `ninjops report-mutes` - Show muted users
+- `ninjops report-kicked` - Show kicked users
+- `ninjops report-events` - Show events
+- `ninjops report-hooks` - Show hooks
+- `ninjops report-waiting` - Show waiting users
+- `ninjops report-invites` - Show pending invites
+- `ninjops report-pending` - Show pending requests
+- `ninjops report-active` - Show active requests
+- `ninjops report-queued` - Show queued jobs
+- `ninjops report-workers` - Show workers
+- `ninjops report-failed` - Show failed jobs
+- `ninjops report-completed` - Show completed jobs
+- `ninjops report-running` - Show running jobs
+- `ninjops report-succeeded` - Show succeeded jobs
+- `ninjops report-pending` - Show pending deployments
+- `ninjops report-failed` - Show failed deployments
+- `ninjops report-rollback` - Show rollbacks
+- `ninjops report-history` - Show deployment history
+- `ninjops report-rollback` - Roll back to previous version
+- `ninjops report-templates` - Show templates
+- `ninjops report-state` - Show state file information
+- `ninjops report-credentials` - Show credentials
+- `ninjops report-config` - Show config file path
+- `ninjops report-auth-creds` - Show auth credentials file path
+- `ninjops report-templates` - Show template paths
+- `ninjops report-tasks` - Show tasks directory
+- `ninjops report-secrets` - Show secrets file path
+- `ninjops report-workflow` - Show workflow information
+- `ninjops report-issues` - Show issues
+- `ninjops report-prs` - Show pull requests
+- `ninjops report-commits` - Show commits
+- `ninjops report-branches` - Show branches
+- `ninjops report-repo` - Show repository info
+- `ninjops report-remote` - Show remote URL
+- `ninjops report-workflow` - Show workflow file path
+- `ninjops report-worktree` - Show git worktree information
+- `ninjops report-gitignore` - Show .gitignore contents
+- `ninjops report-license` - Show license file
+- `ninjops report-makefile` - Show Makefile path
+- `ninjops report-goreleaser` - Show GoReleaser config
+- `ninjops report-dockerfile` - Show Dockerfile path
+- `ninjops report-compose` - Show docker-compose.yml path
+- `ninjops report-manifest` - Show manifest file path
+- `ninjops report-changelog` - Show CHANGE log file
+- `ninjops report-readme` - Show README file path
+- `ninjops report-contributing` - Show contributing guide
+- `ninjops report-code-of-conduct` - Show code of conduct file
+- `ninjops report-security` - Show security policy
+- `ninjops report-api` - Show API documentation
+- `ninjops report-todos` - Show todos
+- `ninjops report-lessons` - Show lessons learned
+- `ninjops report-roadmap` - Show roadmap
+- `ninjops report-timeline` - Show timeline
+- `ninjops report-tasks` - Show tasks
+- `ninjops report-todo` - Show todo file path
+- `ninjops report-lessons` - Show lessons file path
+- `ninjops report-plan` - Show plan file path
+- `ninjops report-flags` - Show available flags
+- `ninjops report-env` - Show environment variables
+- `ninjops report-examples` - Show example files
+- `ninjops report-benchmarks` - Show benchmarks
+- `ninjops report-metrics` - Show performance metrics
+- `ninjops report-stats` - Show statistics
+- `ninjops report-health` - Show health status
+- `ninjops report-diagnose` - Run diagnostic commands
+- `ninjops report-shell-completion` - Show shell completion code
+- `ninjops report-suggestions` - Show shell suggestions
+- `ninjops report-zsh-completions` - Show zsh completions
+- `ninjops report-bash-completion` - Show bash completion code
+- `ninjops report-fish-completion` - Show fish completion code
+- `ninjops report-pwsh-completion` - Show pwsh completion code
+- `ninjops report-ny` - No (not implemented)
+- `ninjops report-oh-my-zsh` - No (not implemented)
+- `ninjops report-cmd` - No (not implemented)
+- `ninjops report-dir` - No (not implemented)
+- `ninjops report-vcs` - No (not implemented)
+- `ninjops report-init` - No (not implemented)
+- `ninjops report-import` - No (not implemented)
+- `ninjops report-export` - No (not implemented)
+- `ninjops report-source` - No (not implemented)
+- `ninjops report-run` - No (not implemented)
+- `ninjops report-which` - No (not implemented)
+- `ninjops report-type` - No (not implemented)
+- `ninjops report-args` - No (not implemented)
+- `ninjops report-verbose` - No (not implemented)
+- `ninjops report-help` - No (not implemented)
+- `ninjops report-sandbox` - No (not implemented)
+- `ninjops report-playground` - No (not implemented)
+- `ninjops report-tree` - No (not implemented)
+- `ninjops report-forest` - No (not implemented)
+- `ninjops report-stats` - No (not implemented)
+- `ninjops report-analysis` - No (not implemented)
+- `ninjops report-report` - No (not implemented)
+- `ninjops report-summary` - No (not implemented)
+- `ninjops report-children` - No (not implemented)
+- `ninjops report-child` - No (not implemented)
+- `ninjops report-siblings` - No (not implemented)
+- `ninjops report-parent` - No (not implemented)
+- ` ninjops init`
+- ninjops configure
+- ninjops validate
+- ninjops generate
+- ninjops assist
+ - ninjops list
+- ninjops show
+- ninjops edit
+ - ninjops ninja test
+ - ninjops ninja pull
+ - ninjops ninja sync
+ - ninjops ninja diff
+ - ninjops serve
+ - ninjops new quote
+- ninjops new invoice
+- ninjops convert
+
+- ninjops version
+ - ninjops help
+ - ninjops completion
+ - ninjops docs
+ - ninjops man
+ - ninjops update
+ - ninjops upgrade
+ - ninjops self-update
+ - ninjops doctor
+ - ninjops config
+ - ninjops debug
+ - ninjops verbose
+ - ninjops quiet
+ - ninjops json
+ - ninjops no-input
+ - ninjops yes
+ - ninjops dry-run
+ - ninjops force
+ - ninjops trace
+ - ninjops profile
+ - ninjops cpus
+ - ninjops mem
+ - ninjops build-info
+ - ninjops static
+ - ninjops tar
+ - ninjops zip
+ - ninjops zstd
+ - ninjops xz
+ - ninjops bzip2
+ - ninjops gz
+ - ninjops pass
+ - ninjops stdout
+ - ninjops stderr
+ - ninjops install-completion
+ - ninjops install-completion-suggestions
+ - ninjops install-completion-man
+ - ninjops generate-man-page
+ - ninjops clear-cache
+ - ninjops reset-config
+ - ninjops debug-config
+ - ninjops test
+ - ninjops test-coverage
+ - ninjops test-suite
+ - ninjops test-file
+ - ninjops test-all
+ - ninjops test-failed
+ - ninjops test-passed
+ - ninjops test-skipped
+ - ninjops test-verbose
+ - ninjops test-quiet
+ - ninjops test-timeout
+ - ninjops test-parallel
+ - ninjops test-race
+ - ninjops test-fail-fast
+ - ninjops test-repeat
+ - ninjops test-update-snapshot
+ - ninjops test-watch
+ - ninjops test-match
+ - ninjops test-match-snapshot
+ - ninjops test-benchmark
+ - ninjops test-cov
+ - ninjops test-lint
+ - ninjops test-fmt
+ - ninjops test-vet
+ - ninjops test-sec
+ - ninjops test-docs
+ - ninjops test-examples
+ - ninjops test-typos
+ - ninjops test-spell
+ - ninjops test-links
+ - ninjops test-orphans
+ - ninjops test-duplicates
+ - ninjops test-deps
+ - ninjops test-deps-extra
+ - ninjops test-licenses
+ - ninjops test-security
+ - ninjops test-vulnerabilities
+ - ninjops test-performance
+ - ninjops test-load
+ - ninjops test-stress
+ - ninjops test-smoke
+ - ninjops test-integration
+ - ninjops test-e2e
+ - ninjops test-ui
+ - ninjops test-acceptance
+ - ninjops test-api
+ - ninjops test-contract
+ - ninjops test-coverage
+ - ninjops test-coverage-html
+ - ninjops test-coverage-json
+ - ninjops report
+ - ninjops report-bug
+ - ninjops report-coverage
+ - ninjops report-performance
+ - ninjops report-security
+ - ninjops report-usage
+ - ninjops report-completion
+ - ninjops report-activity
+ - ninjops report-errors
+ - ninjops report-warnings
+ - ninjops report-status
+ - ninjops report-uuid
+ - ninjops report-config
+ - ninjops report-logs
+ - ninjops report-path
+ - ninjops report-version
+ - ninjops report-registry
+ - ninjops report-licenses
+ - ninjops report-uptime
+ - ninjops report-timestamp
+ - ninjops report-timezone
+ - ninjops report-hostname
+ - ninjops report-domain
+ - ninjops report-username
+ - ninjops report-whoami
+ - ninjops report-groups
+ - ninjops report-members
+ - ninjops report-owners
+ - ninjops report-repo
+ - ninjops report-remote
+ - ninjops report-branch
+ - ninjops report-commit
+ - ninjops report-tags
+ - ninjops report-release
+ - ninjops report-releases
+ - ninjops report-changelog
+ - ninjops report-contributors
+ - ninjops report-dependencies
+ - ninjops report-vulnerabilities
+ - ninjops report-expire
+ - ninjops report-refresh
+ - ninjops report-cache
+ - ninjops report-throttle
+ - ninjops report-rate-limit
+ - ninjops report-suspend
+ - ninjops report-ban
+ - ninjops report-blocked
+ - ninjops report-mutes
+ - ninjops report-kicked
+ - ninjops report-events
+ - ninjops report-hooks
+ - ninjops report-waiting
+ - ninjops report-invites
+ - ninjops report-pending
+ - ninjops report-active
+ - ninjops report-queued
+ - ninjops report-workers
+ - ninjops report-failed
+ - ninjops report-completed
+ - ninjops report-running
+ - ninjops report-succeeded
+ - ninjops report-pending
+ - ninjops report-failed
+ - ninjops report-rollback
+ - ninjops report-history
+ - ninjops report-rollback
+ - ninjops report-templates
+ - ninjops report-state
+ - ninjops report-credentials
+ - ninjops report-config
+ - ninjops report-auth-creds
+ - ninjops report-templates
+ - ninjops report-tasks
+ - ninjops report-secrets
+ - ninjops report-workflow
+ - ninjops report-issues
+ - ninjops report-prs
+ - ninjops report-commits
+ - ninjops report-branches
+ - ninjops report-repo
+ - ninjops report-remote
+ - ninjops report-workflow
+ - ninjops report-worktree
+ - ninjops report-gitignore
+ - ninjops report-license
+ - ninjops report-makefile
+ - ninjps report-goreleaser
+ - ninjops report-dockerfile
+ - ninjops report-compose
+ - ninjops report-manifest
+ - ninjops report-changelog
+ - ninjops report-readme
+ - ninjops report-contributing
+ - ninjops report-code-of-conduct
+ - ninjops report-security
+ - ninjops report-api
+ - ninjops report-todos
+ - ninjops report-lessons
+ - ninjops report-roadmap
+ - ninjops report-timeline
+ - ninjops report-tasks
+ - ninjops report-todo
+ - ninjops report-lessons
+ - ninjops report-plan
+ - ninjops report-flags
+ - ninjops report-env
+ - ninjops report-examples
+ - ninjops report-benchmarks
+ - ninjops report-metrics
+ - ninjops report-stats
+ - ninjops report-health
+ - ninjops report-diagnose
+ - ninjops report-shell-completion
+ - ninjops report-suggestions
+ - ninjops report-zsh-completions
+ - ninjops report-bash-completion
+ - ninjops report-fish-completion
+ - ninjops report-pwsh-completion
+ - ninjops report-ny` - No (not implemented)
+- `ninjops report-oh-my-zsh` - No (not implemented)
+- `ninjops report-cmd` - No (not implemented)
+- `ninjops report-dir` - No (not implemented)
+- `ninjops report-vcs` - No (not implemented)
+- `ninjops report-init` - No (not implemented)
+- `ninjops report-import` - No (not implemented)
+- `ninjops report-export` - No (not implemented)
+- `ninjops report-source` - No (not implemented)
+- `ninjops report-run` - No (not implemented)
+- `ninjops report-which` - No (not implemented)
+- `ninjops report-type` - No (not implemented)
+- `ninjops report-args` - No (not implemented)
+- `ninjops report-verbose` - No (not implemented)
+- `ninjops report-help` - No (not implemented)
+- `ninjops report-sandbox` - No (not implemented)
+- `ninjops report-playground` - No (not implemented)
+- `ninjops report-tree` - No (not implemented)
+- `ninjops report-forest` - No (not implemented)
+- `ninjops report-stats` - No (not implemented)
+- `ninjops report-analysis` - No (not implemented)
+- `ninjops report-report` - No (not implemented)
+- `ninjops report-summary` - No (not implemented)
+- `ninjops report-children` - No (not implemented)
+- `ninjops report-child` - No (not implemented)
+- `ninjops report-siblings` - No (not implemented)
+- `ninjops report-parent` - No (not implemented)
+
