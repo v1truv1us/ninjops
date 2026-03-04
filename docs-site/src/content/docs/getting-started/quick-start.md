@@ -9,7 +9,7 @@ This guide will walk you through creating your first quote with Ninjops.
 
 ## Prerequisites
 
-- Ninjops installed (see [Installation](/getting-started/installation/))
+- Ninjops installed (see [Installation](/ninjops/getting-started/installation/))
 - An Invoice Ninja v5 instance (optional for local-only workflows)
 
 ## Step 1: Initialize Your Project
@@ -115,7 +115,7 @@ ninjops ninja sync --input my-quote.json
 
 Now that you've created your first quote, explore these topics:
 
-- [Configuration](/getting-started/configuration/) - Learn about all configuration options
-- [Creating Quotes](/guides/creating-quotes/) - Deep dive into quote creation
-- [AI Assistance](/guides/ai-assistance/) - Enhance your quotes with AI
-- [Invoice Ninja Sync](/guides/invoice-ninja-sync/) - Advanced sync workflows
+- [Configuration](/ninjops/getting-started/configuration/) - Learn about all configuration options
+- [Creating Quotes](/ninjops/guides/creating-quotes/) - Deep dive into quote creation
+- [AI Assistance](/ninjops/guides/ai-assistance/) - Enhance your quotes with AI
+- [Invoice Ninja Sync](/ninjops/guides/invoice-ninja-sync/) - Advanced sync workflows

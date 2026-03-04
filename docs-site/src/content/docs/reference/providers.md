@@ -135,7 +135,7 @@ ninjops assist boundaries --input quote.json --provider openai --plan codex-pro
 ```
 
 ## HTTP API
-See [HTTP API documentation](/guides/http-api.md) for full details.
+See [HTTP API documentation](/ninjops/guides/http-api/) for full details.
 
 ## Best Practices
 1. Start with offline provider for baseline improvements

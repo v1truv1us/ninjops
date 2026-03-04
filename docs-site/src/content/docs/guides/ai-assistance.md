@@ -227,5 +227,5 @@ ninjops generate --input final.json --format md --out-dir output/
 
 ## Next Steps
 
-- [Invoice Ninja Sync](/guides/invoice-ninja-sync/) - Sync your enhanced quote
-- [Examples](/examples/church-website/) - See complete examples
+- [Invoice Ninja Sync](/ninjops/guides/invoice-ninja-sync/) - Sync your enhanced quote
+- [Examples](/ninjops/examples/church-website/) - See complete examples

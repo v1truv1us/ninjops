@@ -183,6 +183,6 @@ ninjops new quote --non-interactive \
 
 ## Next Steps
 
-- [AI Assistance](/guides/ai-assistance/) - Enhance your quotes with AI
-- [Invoice Ninja Sync](/guides/invoice-ninja-sync/) - Sync quotes to Invoice Ninja
-- [Examples](/examples/church-website/) - See complete quote examples
+- [AI Assistance](/ninjops/guides/ai-assistance/) - Enhance your quotes with AI
+- [Invoice Ninja Sync](/ninjops/guides/invoice-ninja-sync/) - Sync quotes to Invoice Ninja
+- [Examples](/ninjops/examples/church-website/) - See complete quote examples

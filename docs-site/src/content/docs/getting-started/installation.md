@@ -78,4 +78,4 @@ You should see the version information printed to the console.
 
 ## Next Steps
 
-Once installed, continue to the [Quick Start guide](/getting-started/quick-start/) to create your first quote.
+Once installed, continue to the [Quick Start guide](/ninjops/getting-started/quick-start/) to create your first quote.

@@ -193,6 +193,6 @@ ninjops configure --provider customprovider
 
 ## Next Steps
 
-- [Creating Quotes](/guides/creating-quotes/) - Use your configuration to create quotes
-- [AI Assistance](/guides/ai-assistance/) - Configure AI providers for enhanced quotes
-- [Commands Reference](/reference/commands/) - See all available commands and flags
+- [Creating Quotes](/ninjops/guides/creating-quotes/) - Use your configuration to create quotes
+- [AI Assistance](/ninjops/guides/ai-assistance/) - Configure AI providers for enhanced quotes
+- [Commands Reference](/ninjops/reference/commands/) - See all available commands and flags

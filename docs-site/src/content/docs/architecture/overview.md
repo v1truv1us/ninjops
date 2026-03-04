@@ -27,10 +27,9 @@ Works without AI keys. Templates and validation function independently. This pro
 
 ## Design Decisions
 
-See [Architecture Decisions](/architecture/decisions/) for detailed information.
+See [Architecture Decisions](/ninjops/architecture/decisions/) for detailed information.
 
- Also see:
-- [PRD](/architecture/prd.md) - Product requirements document
-- [TECH_SPEC](/architecture/tech-spec.md) - Technical specification
-- [API_CONTRACT](/architecture/api-contract.md) - API schemas and contracts
-
+Also see source specifications in the repository:
+- [PRD](https://github.com/v1truv1us/ninjops/blob/main/docs/PRD.md)
+- [TECH_SPEC](https://github.com/v1truv1us/ninjops/blob/main/docs/TECH_SPEC.md)
+- [API_CONTRACT](https://github.com/v1truv1us/ninjops/blob/main/docs/API_CONTRACT.md)

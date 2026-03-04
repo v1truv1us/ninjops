@@ -49,4 +49,4 @@ Ninjops follows a **deterministic-first** approach:
 
 ## Next Steps
 
-Ready to get started? Check out the [Installation guide](/getting-started/installation/) or jump straight to the [Quick Start](/getting-started/quick-start/).
+Ready to get started? Check out the [Installation guide](/ninjops/getting-started/installation/) or jump straight to the [Quick Start](/ninjops/getting-started/quick-start/).

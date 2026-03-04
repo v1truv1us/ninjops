@@ -142,5 +142,5 @@ curl -X POST http://localhost:8080/generate \
 4. **Use health checks** - Implement health check endpoints
 
 ## Next steps
-- [AI Assistance](/guides/ai-assistance/) - Enhance QuoteSpecs with AI
-- [Invoice Ninja Sync](/guides/invoice-ninja-sync/) - Sync with Invoice Ninja
+- [AI Assistance](/ninjops/guides/ai-assistance/) - Enhance QuoteSpecs with AI
+- [Invoice Ninja Sync](/ninjops/guides/invoice-ninja-sync/) - Sync with Invoice Ninja
