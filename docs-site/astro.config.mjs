@@ -2,19 +2,12 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
-  site: 'https://v1truv1us.github.io',
   base: '/ninjops',
   output: 'static',
   integrations: [
     starlight({
       title: 'Ninjops Documentation',
       description: 'Production-ready Go CLI for Invoice Ninja quote/invoice management',
-      defaultLocale: 'en',
-      locales: {
-        en: {
-          label: 'English',
-        },
-      },
       sidebar: [
         {
           label: 'Getting Started',
