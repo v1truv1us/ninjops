@@ -25,8 +25,12 @@ make install
 
 ```bash
 brew tap v1truv1us/tap
-brew install ninjops
+brew install v1truv1us/tap/ninjops
 ```
+
+Notes:
+- Use the fully-qualified formula name to avoid conflicts if another tap also ships `ninjops`.
+- Upgrade with: `brew upgrade v1truv1us/tap/ninjops`
 
 ### Download Binary
 
@@ -491,6 +495,7 @@ make ci
 - Tag pushes trigger the GitHub Actions release workflow, which runs GoReleaser and publishes:
   - GitHub release artifacts
   - Homebrew formula updates to `v1truv1us/homebrew-tap`
+- Homebrew install is available from `v0.1.0+` via `v1truv1us/tap/ninjops`.
 - Required repository secret for formula publishing: `HOMEBREW_TAP_GITHUB_TOKEN` (a token with push access to `v1truv1us/homebrew-tap`).
 
 ## Security
