@@ -13,13 +13,7 @@ A production-ready, test-driven Go CLI for agentic orchestration of Invoice Ninj
 
 ## Installation
 
-### From Source
-
-```bash
-git clone https://github.com/v1truv1us/ninjops.git
-cd ninjops
-make install
-```
+Preferred install order during alpha: Homebrew, release binary, then source install.
 
 ### Homebrew
 
@@ -36,9 +30,17 @@ Notes:
 
 Download from [Releases](https://github.com/v1truv1us/ninjops/releases)
 
-### Docker
+### From Source
 
-Requires a running Docker daemon.
+```bash
+git clone https://github.com/v1truv1us/ninjops.git
+cd ninjops
+make install
+```
+
+### Docker (Optional/Advanced)
+
+Docker is optional during alpha and requires a running Docker daemon.
 
 ```bash
 git clone https://github.com/v1truv1us/ninjops.git

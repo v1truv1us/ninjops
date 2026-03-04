@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Install Ninjops on your system using Homebrew, binary download, Docker, or from source
+description: Install Ninjops on your system using Homebrew, release binaries, or from source
 ---
 
 # Installation
@@ -35,19 +35,6 @@ chmod +x ninjops
 sudo mv ninjops /usr/local/bin/
 ```
 
-## Docker
-
-Build and run from the local `Dockerfile`:
-
-Requires a running Docker daemon.
-
-```bash
-git clone https://github.com/v1truv1us/ninjops.git
-cd ninjops
-docker build -t ninjops:latest .
-docker run --rm -p 8080:8080 ninjops:latest
-```
-
 ## From Source
 
 Build from source if you want the latest development version or need to customize the build.
@@ -69,6 +56,19 @@ This will:
 1. Download dependencies
 2. Build the binary
 3. Install `ninjops` to your Go bin directory (`$(go env GOPATH)/bin`)
+
+## Docker (Optional/Advanced)
+
+Docker is optional during alpha. Build and run from the local `Dockerfile` when needed:
+
+Requires a running Docker daemon.
+
+```bash
+git clone https://github.com/v1truv1us/ninjops.git
+cd ninjops
+docker build -t ninjops:latest .
+docker run --rm -p 8080:8080 ninjops:latest
+```
 
 ## Verify Installation
 
