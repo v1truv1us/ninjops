@@ -42,7 +42,7 @@ type Store struct {
 
 func NewStore(projectDir string) (*Store, error) {
 	stateDir := filepath.Join(projectDir, StateDir)
-	if err := os.MkdirAll(stateDir, 0755); err != nil {
+	if err := os.MkdirAll(stateDir, 0750); err != nil {
 		return nil, fmt.Errorf("failed to create state directory: %w", err)
 	}
 
@@ -77,7 +77,7 @@ func (s *Store) save() error {
 		return fmt.Errorf("failed to marshal state: %w", err)
 	}
 
-	return os.WriteFile(s.path, data, 0644)
+	return os.WriteFile(s.path, data, 0600)
 }
 
 func (s *Store) GetEntry(referenceID string) (*StateEntry, error) {

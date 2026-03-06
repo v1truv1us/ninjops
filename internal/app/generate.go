@@ -48,27 +48,27 @@ func newGenerateCmd() *cobra.Command {
 			formatter := generate.NewFormatter(generate.OutputFormat(format))
 
 			if outDir != "" {
-				if err := os.MkdirAll(outDir, 0755); err != nil {
+				if err := os.MkdirAll(outDir, 0750); err != nil {
 					return fmt.Errorf("failed to create output directory: %w", err)
 				}
 
 				proposal, _ := formatter.FormatProposal(artifacts)
-				if err := os.WriteFile(filepath.Join(outDir, "proposal.md"), []byte(proposal), 0644); err != nil {
+				if err := os.WriteFile(filepath.Join(outDir, "proposal.md"), []byte(proposal), 0600); err != nil {
 					return fmt.Errorf("failed to write proposal: %w", err)
 				}
 
 				terms, _ := formatter.FormatTerms(artifacts)
-				if err := os.WriteFile(filepath.Join(outDir, "terms.md"), []byte(terms), 0644); err != nil {
+				if err := os.WriteFile(filepath.Join(outDir, "terms.md"), []byte(terms), 0600); err != nil {
 					return fmt.Errorf("failed to write terms: %w", err)
 				}
 
 				notes, _ := formatter.FormatNotes(artifacts)
-				if err := os.WriteFile(filepath.Join(outDir, "notes.txt"), []byte(notes), 0644); err != nil {
+				if err := os.WriteFile(filepath.Join(outDir, "notes.txt"), []byte(notes), 0600); err != nil {
 					return fmt.Errorf("failed to write notes: %w", err)
 				}
 
 				generatedJSON, _ := json.MarshalIndent(artifacts, "", "  ")
-				if err := os.WriteFile(filepath.Join(outDir, "generated.json"), generatedJSON, 0644); err != nil {
+				if err := os.WriteFile(filepath.Join(outDir, "generated.json"), generatedJSON, 0600); err != nil {
 					return fmt.Errorf("failed to write generated.json: %w", err)
 				}
 

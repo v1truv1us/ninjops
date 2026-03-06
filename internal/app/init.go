@@ -23,7 +23,7 @@ func newInitCmd() *cobra.Command {
 			}
 
 			ninjopsDir := filepath.Join(outputDir, ".ninjops")
-			if err := os.MkdirAll(ninjopsDir, 0755); err != nil {
+			if err := os.MkdirAll(ninjopsDir, 0750); err != nil {
 				return fmt.Errorf("failed to create .ninjops directory: %w", err)
 			}
 
@@ -42,7 +42,7 @@ listen = "127.0.0.1"
 port = 8080
 `
 			configPath := filepath.Join(ninjopsDir, "config.toml")
-			if err := os.WriteFile(configPath, []byte(configContent), 0644); err != nil {
+			if err := os.WriteFile(configPath, []byte(configContent), 0600); err != nil {
 				return fmt.Errorf("failed to write config file: %w", err)
 			}
 
@@ -112,7 +112,7 @@ port = 8080
 
 			specJSON, _ := sampleSpec.ToJSON()
 			specPath := filepath.Join(outputDir, "quote_template.json")
-			if err := os.WriteFile(specPath, specJSON, 0644); err != nil {
+			if err := os.WriteFile(specPath, specJSON, 0600); err != nil {
 				return fmt.Errorf("failed to write sample spec: %w", err)
 			}
 

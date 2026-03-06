@@ -1410,15 +1410,15 @@ func writeNewQuoteArtifacts(outputPath string, artifactsDir string, quoteSpec *s
 		finalDir = filepath.Dir(outputPath)
 	}
 
-	if err := os.MkdirAll(finalDir, 0755); err != nil {
+	if err := os.MkdirAll(finalDir, 0750); err != nil {
 		return fmt.Errorf("failed to create artifacts directory: %w", err)
 	}
 
-	if err := os.WriteFile(filepath.Join(finalDir, defaultTermsFilename), []byte(artifacts.TermsMarkdown), 0644); err != nil {
+	if err := os.WriteFile(filepath.Join(finalDir, defaultTermsFilename), []byte(artifacts.TermsMarkdown), 0600); err != nil {
 		return fmt.Errorf("failed to write %s: %w", defaultTermsFilename, err)
 	}
 
-	if err := os.WriteFile(filepath.Join(finalDir, defaultPublicNotesFile), []byte(artifacts.PublicNotesText), 0644); err != nil {
+	if err := os.WriteFile(filepath.Join(finalDir, defaultPublicNotesFile), []byte(artifacts.PublicNotesText), 0600); err != nil {
 		return fmt.Errorf("failed to write %s: %w", defaultPublicNotesFile, err)
 	}
 
@@ -1426,11 +1426,11 @@ func writeNewQuoteArtifacts(outputPath string, artifactsDir string, quoteSpec *s
 }
 
 func writeFile(path string, data []byte) error {
-	if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
+	if err := os.MkdirAll(filepath.Dir(path), 0750); err != nil {
 		return fmt.Errorf("failed to create output directory: %w", err)
 	}
 
-	if err := os.WriteFile(path, data, 0644); err != nil {
+	if err := os.WriteFile(path, data, 0600); err != nil {
 		return fmt.Errorf("failed to write output file: %w", err)
 	}
 
