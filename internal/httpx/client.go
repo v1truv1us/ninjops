@@ -7,11 +7,41 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/url"
 	"strings"
 	"time"
 
 	"github.com/ninjops/ninjops/internal/config"
 )
+
+// validateURL checks that the URL is safe to request (no SSRF)
+func validateURL(rawURL string, allowedSchemes []string) error {
+	if allowedSchemes == nil {
+		allowedSchemes = []string{"https", "http"}
+	}
+
+	parsed, err := url.Parse(rawURL)
+	if err != nil {
+		return fmt.Errorf("invalid URL: %w", err)
+	}
+
+	if parsed.Host == "" {
+		return fmt.Errorf("URL missing host")
+	}
+
+	schemeValid := false
+	for _, s := range allowedSchemes {
+		if parsed.Scheme == s {
+			schemeValid = true
+			break
+		}
+	}
+	if !schemeValid {
+		return fmt.Errorf("URL scheme must be one of: %v", allowedSchemes)
+	}
+
+	return nil
+}
 
 type RetryConfig struct {
 	MaxRetries  int
@@ -65,6 +95,11 @@ func NewClientWithAuth(cfg ClientConfig, token, secret string) *Client {
 }
 
 func (c *Client) Do(ctx context.Context, req *http.Request) (*http.Response, error) {
+	// Validate URL to prevent SSRF (G704)
+	if err := validateURL(req.URL.String(), []string{"https", "http"}); err != nil {
+		return nil, fmt.Errorf("SSRF validation failed: %w", err)
+	}
+
 	c.setHeaders(req)
 
 	var lastErr error
@@ -132,7 +167,6 @@ func (c *Client) Post(ctx context.Context, url string, body interface{}) (*http.
 		}
 		reqBody = bytes.NewBuffer(data)
 	}
-
 	req, err := http.NewRequest(http.MethodPost, url, reqBody)
 	if err != nil {
 		return nil, err
@@ -150,7 +184,6 @@ func (c *Client) Put(ctx context.Context, url string, body interface{}) (*http.R
 		}
 		reqBody = bytes.NewBuffer(data)
 	}
-
 	req, err := http.NewRequest(http.MethodPut, url, reqBody)
 	if err != nil {
 		return nil, err
@@ -174,15 +207,12 @@ func (c *Client) shouldRetry(statusCode int, err error) bool {
 	if err != nil {
 		return true
 	}
-
 	if statusCode == 429 {
 		return true
 	}
-
 	if statusCode >= 500 && statusCode < 600 {
 		return true
 	}
-
 	return false
 }
 
@@ -190,7 +220,6 @@ func (c *Client) redactError(err error) error {
 	if !c.config.TokenRedact {
 		return err
 	}
-
 	errStr := err.Error()
 	if c.token != "" {
 		errStr = strings.ReplaceAll(errStr, c.token, config.RedactToken(c.token))
@@ -198,7 +227,6 @@ func (c *Client) redactError(err error) error {
 	if c.secret != "" {
 		errStr = strings.ReplaceAll(errStr, c.secret, config.RedactToken(c.secret))
 	}
-
 	if errStr != err.Error() {
 		return fmt.Errorf("%s", errStr)
 	}
@@ -207,16 +235,13 @@ func (c *Client) redactError(err error) error {
 
 func ParseJSONResponse(resp *http.Response, v interface{}) error {
 	defer resp.Body.Close()
-
 	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
 		body, _ := io.ReadAll(resp.Body)
 		return fmt.Errorf("HTTP %d: %s", resp.StatusCode, string(body))
 	}
-
 	if err := json.NewDecoder(resp.Body).Decode(v); err != nil {
 		return fmt.Errorf("failed to parse response: %w", err)
 	}
-
 	return nil
 }
 

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"time"
 
 	"github.com/ninjops/ninjops/internal/agents"
 	"github.com/ninjops/ninjops/internal/config"
@@ -18,6 +19,7 @@ import (
 func newServeCmd() *cobra.Command {
 	var listen string
 	var port int
+
 	defaults := activeConfig()
 
 	cmd := &cobra.Command{
@@ -27,19 +29,28 @@ func newServeCmd() *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 			addr := fmt.Sprintf("%s:%d", listen, port)
 
-			http.HandleFunc("/generate", handleGenerate)
-			http.HandleFunc("/assist/", handleAssist)
-			http.HandleFunc("/ninja/sync", handleNinjaSync)
-			http.HandleFunc("/health", handleHealth)
+			mux := http.NewServeMux()
+			mux.HandleFunc("/health", handleHealth)
+			mux.HandleFunc("/generate", handleGenerate)
+			mux.HandleFunc("/assist/", handleAssist)
+			mux.HandleFunc("/ninja/sync", handleNinjaSync)
+
+			server := &http.Server{
+				Addr:         addr,
+				Handler:      mux,
+				ReadTimeout:  10 * time.Second,
+				WriteTimeout: 10 * time.Second,
+				IdleTimeout:  120 * time.Second,
+			}
 
 			fmt.Printf("Starting server on %s\n", addr)
 			fmt.Println("Endpoints:")
-			fmt.Println("  POST /generate     - Generate artifacts from QuoteSpec")
+			fmt.Println("  POST /generate    - Generate artifacts from QuoteSpec")
 			fmt.Println("  POST /assist/{role} - Get AI assistance")
-			fmt.Println("  POST /ninja/sync   - Sync with Invoice Ninja")
-			fmt.Println("  GET  /health       - Health check")
+			fmt.Println("  POST /ninja/sync  - Sync with Invoice Ninja")
+			fmt.Println("  GET  /health      - Health check")
 
-			return http.ListenAndServe(addr, nil)
+			return server.ListenAndServe()
 		},
 	}
 
@@ -51,7 +62,7 @@ func newServeCmd() *cobra.Command {
 
 func handleHealth(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
+	_ = json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
 }
 
 func handleGenerate(w http.ResponseWriter, r *http.Request) {
@@ -79,7 +90,7 @@ func handleGenerate(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(artifacts)
+	_ = json.NewEncoder(w).Encode(artifacts)
 }
 
 func handleAssist(w http.ResponseWriter, r *http.Request) {
@@ -100,12 +111,10 @@ func handleAssist(w http.ResponseWriter, r *http.Request) {
 		Plan      string          `json:"plan,omitempty"`
 		Model     string          `json:"model,omitempty"`
 	}
-
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, fmt.Sprintf("Invalid request: %v", err), http.StatusBadRequest)
 		return
 	}
-
 	if req.QuoteSpec == nil {
 		http.Error(w, "Missing quote_spec", http.StatusBadRequest)
 		return
@@ -127,11 +136,11 @@ func handleAssist(w http.ResponseWriter, r *http.Request) {
 	if modelName == "" {
 		modelName = appCfg.Agent.Model
 	}
+
 	providerName, modelName = config.ResolveProviderModel(providerName, modelName)
-
 	apiKey := config.ResolveProviderAPIKey(providerName, appCfg.Agent.ProviderAPIKey)
-	provider := agents.GetProvider(providerName, apiKey)
 
+	provider := agents.GetProvider(providerName, apiKey)
 	if !provider.IsAvailable() {
 		http.Error(w, fmt.Sprintf("Provider %s not available", providerName), http.StatusServiceUnavailable)
 		return
@@ -152,7 +161,7 @@ func handleAssist(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	_ = json.NewEncoder(w).Encode(response)
 }
 
 func handleNinjaSync(w http.ResponseWriter, r *http.Request) {
@@ -162,7 +171,6 @@ func handleNinjaSync(w http.ResponseWriter, r *http.Request) {
 	}
 
 	appCfg := activeConfig()
-
 	if appCfg.Ninja.APIToken == "" {
 		http.Error(w, "Invoice Ninja API token not configured", http.StatusServiceUnavailable)
 		return
@@ -173,17 +181,14 @@ func handleNinjaSync(w http.ResponseWriter, r *http.Request) {
 		Mode      string          `json:"mode"`
 		DryRun    bool            `json:"dry_run"`
 	}
-
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, fmt.Sprintf("Invalid request: %v", err), http.StatusBadRequest)
 		return
 	}
-
 	if req.QuoteSpec == nil {
 		http.Error(w, "Missing quote_spec", http.StatusBadRequest)
 		return
 	}
-
 	if err := spec.Validate(req.QuoteSpec); err != nil {
 		http.Error(w, fmt.Sprintf("Validation failed: %v", err), http.StatusBadRequest)
 		return
@@ -202,6 +207,7 @@ func handleNinjaSync(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("Failed to initialize state store: %v", err), http.StatusInternalServerError)
 		return
 	}
+
 	syncer := invoiceninja.NewSyncer(client, st)
 
 	syncMode := invoiceninja.SyncMode(req.Mode)
@@ -222,7 +228,7 @@ func handleNinjaSync(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(result)
+	_ = json.NewEncoder(w).Encode(result)
 }
 
 func activeConfig() *config.Config {

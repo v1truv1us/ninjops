@@ -1,0 +1,759 @@
+{
+	"Golang errors": {},
+	"Issues": [
+		{
+			"severity": "HIGH",
+			"confidence": "HIGH",
+			"cwe": null,
+			"rule_id": "G704",
+			"details": "SSRF via taint analysis",
+			"file": "/data/repos/ninjops/internal/httpx/client.go",
+			"code": "96: \n97: \t\tresp, err := c.client.Do(req.WithContext(ctx))\n98: \t\tif err != nil {\n",
+			"line": "97",
+			"column": "27",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "HIGH",
+			"confidence": "HIGH",
+			"cwe": null,
+			"rule_id": "G703",
+			"details": "Path traversal via taint analysis",
+			"file": "/data/repos/ninjops/internal/config/config.go",
+			"code": "167: \tif ext == \".jsonc\" {\n168: \t\tdata, err := os.ReadFile(path)\n169: \t\tif err != nil {\n",
+			"line": "168",
+			"column": "27",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "HIGH",
+			"confidence": "HIGH",
+			"cwe": null,
+			"rule_id": "G703",
+			"details": "Path traversal via taint analysis",
+			"file": "/data/repos/ninjops/internal/config/config.go",
+			"code": "99: \tfor _, candidate := range candidates {\n100: \t\tif _, err := os.Stat(candidate); err == nil {\n101: \t\t\tif err := cl.readConfigAtPath(candidate); err != nil {\n",
+			"line": "100",
+			"column": "23",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "HIGH",
+			"confidence": "HIGH",
+			"cwe": null,
+			"rule_id": "G703",
+			"details": "Path traversal via taint analysis",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "70: \t\t\t\tgeneratedJSON, _ := json.MarshalIndent(artifacts, \"\", \"  \")\n71: \t\t\t\tif err := os.WriteFile(filepath.Join(outDir, \"generated.json\"), generatedJSON, 0644); err != nil {\n72: \t\t\t\t\treturn fmt.Errorf(\"failed to write generated.json: %w\", err)\n",
+			"line": "71",
+			"column": "27",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "HIGH",
+			"confidence": "HIGH",
+			"cwe": null,
+			"rule_id": "G703",
+			"details": "Path traversal via taint analysis",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "65: \t\t\t\tnotes, _ := formatter.FormatNotes(artifacts)\n66: \t\t\t\tif err := os.WriteFile(filepath.Join(outDir, \"notes.txt\"), []byte(notes), 0644); err != nil {\n67: \t\t\t\t\treturn fmt.Errorf(\"failed to write notes: %w\", err)\n",
+			"line": "66",
+			"column": "27",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "HIGH",
+			"confidence": "HIGH",
+			"cwe": null,
+			"rule_id": "G703",
+			"details": "Path traversal via taint analysis",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "60: \t\t\t\tterms, _ := formatter.FormatTerms(artifacts)\n61: \t\t\t\tif err := os.WriteFile(filepath.Join(outDir, \"terms.md\"), []byte(terms), 0644); err != nil {\n62: \t\t\t\t\treturn fmt.Errorf(\"failed to write terms: %w\", err)\n",
+			"line": "61",
+			"column": "27",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "HIGH",
+			"confidence": "HIGH",
+			"cwe": null,
+			"rule_id": "G703",
+			"details": "Path traversal via taint analysis",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "55: \t\t\t\tproposal, _ := formatter.FormatProposal(artifacts)\n56: \t\t\t\tif err := os.WriteFile(filepath.Join(outDir, \"proposal.md\"), []byte(proposal), 0644); err != nil {\n57: \t\t\t\t\treturn fmt.Errorf(\"failed to write proposal: %w\", err)\n",
+			"line": "56",
+			"column": "27",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "676",
+				"url": "https://cwe.mitre.org/data/definitions/676.html"
+			},
+			"rule_id": "G114",
+			"details": "Use of net/http serve function that has no support for setting timeouts",
+			"file": "/data/repos/ninjops/internal/app/serve.go",
+			"code": "41: \n42: \t\t\treturn http.ListenAndServe(addr, nil)\n43: \t\t},\n",
+			"line": "42",
+			"column": "11",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/config/config.go",
+			"code": "167: \tif ext == \".jsonc\" {\n168: \t\tdata, err := os.ReadFile(path)\n169: \t\tif err != nil {\n",
+			"line": "168",
+			"column": "16",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/config/config.go",
+			"code": "137: \n138: \tdata, err := os.ReadFile(resolvedPath)\n139: \tif err != nil {\n",
+			"line": "138",
+			"column": "15",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/app/validate.go",
+			"code": "23: \n24: \t\t\tdata, err := os.ReadFile(inputFile)\n25: \t\t\tif err != nil {\n",
+			"line": "24",
+			"column": "17",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/app/ninja_sync.go",
+			"code": "38: \n39: \t\t\tdata, err := os.ReadFile(inputFile)\n40: \t\t\tif err != nil {\n",
+			"line": "39",
+			"column": "17",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/app/ninja_pull.go",
+			"code": "96: \tif inputFile != \"\" {\n97: \t\tdata, err := os.ReadFile(inputFile)\n98: \t\tif err != nil {\n",
+			"line": "97",
+			"column": "16",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/app/ninja_diff.go",
+			"code": "38: \n39: \t\t\tdata, err := os.ReadFile(inputFile)\n40: \t\t\tif err != nil {\n",
+			"line": "39",
+			"column": "17",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/app/new_invoice.go",
+			"code": "184: func runNewInvoiceFromInput(cmd *cobra.Command, input string, yes bool) error {\n185: \tdata, err := os.ReadFile(input)\n186: \tif err != nil {\n",
+			"line": "185",
+			"column": "15",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "27: \n28: \t\t\tdata, err := os.ReadFile(inputFile)\n29: \t\t\tif err != nil {\n",
+			"line": "28",
+			"column": "17",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "22",
+				"url": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/data/repos/ninjops/internal/app/assist.go",
+			"code": "41: \n42: \t\t\tdata, err := os.ReadFile(inputFile)\n43: \t\t\tif err != nil {\n",
+			"line": "42",
+			"column": "17",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G301",
+			"details": "Expect directory permissions to be 0750 or less",
+			"file": "/data/repos/ninjops/internal/store/store.go",
+			"code": "44: \tstateDir := filepath.Join(projectDir, StateDir)\n45: \tif err := os.MkdirAll(stateDir, 0755); err != nil {\n46: \t\treturn nil, fmt.Errorf(\"failed to create state directory: %w\", err)\n",
+			"line": "45",
+			"column": "12",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G301",
+			"details": "Expect directory permissions to be 0750 or less",
+			"file": "/data/repos/ninjops/internal/app/new.go",
+			"code": "1428: func writeFile(path string, data []byte) error {\n1429: \tif err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {\n1430: \t\treturn fmt.Errorf(\"failed to create output directory: %w\", err)\n",
+			"line": "1429",
+			"column": "12",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G301",
+			"details": "Expect directory permissions to be 0750 or less",
+			"file": "/data/repos/ninjops/internal/app/new.go",
+			"code": "1412: \n1413: \tif err := os.MkdirAll(finalDir, 0755); err != nil {\n1414: \t\treturn fmt.Errorf(\"failed to create artifacts directory: %w\", err)\n",
+			"line": "1413",
+			"column": "12",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G301",
+			"details": "Expect directory permissions to be 0750 or less",
+			"file": "/data/repos/ninjops/internal/app/init.go",
+			"code": "25: \t\t\tninjopsDir := filepath.Join(outputDir, \".ninjops\")\n26: \t\t\tif err := os.MkdirAll(ninjopsDir, 0755); err != nil {\n27: \t\t\t\treturn fmt.Errorf(\"failed to create .ninjops directory: %w\", err)\n",
+			"line": "26",
+			"column": "14",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G301",
+			"details": "Expect directory permissions to be 0750 or less",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "50: \t\t\tif outDir != \"\" {\n51: \t\t\t\tif err := os.MkdirAll(outDir, 0755); err != nil {\n52: \t\t\t\t\treturn fmt.Errorf(\"failed to create output directory: %w\", err)\n",
+			"line": "51",
+			"column": "15",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G301",
+			"details": "Expect directory permissions to be 0750 or less",
+			"file": "/data/repos/ninjops/internal/app/configure.go",
+			"code": "127: \t\t\t}\n128: \t\t\tif err := os.MkdirAll(filepath.Dir(authCredsPath), 0755); err != nil {\n129: \t\t\t\treturn fmt.Errorf(\"failed to create auth credentials directory: %w\", err)\n",
+			"line": "128",
+			"column": "14",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G301",
+			"details": "Expect directory permissions to be 0750 or less",
+			"file": "/data/repos/ninjops/internal/app/configure.go",
+			"code": "124: \n125: \t\t\tif err := os.MkdirAll(filepath.Dir(configPath), 0755); err != nil {\n126: \t\t\t\treturn fmt.Errorf(\"failed to create config directory: %w\", err)\n",
+			"line": "125",
+			"column": "14",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/store/store.go",
+			"code": "79: \n80: \treturn os.WriteFile(s.path, data, 0644)\n81: }\n",
+			"line": "80",
+			"column": "9",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/new.go",
+			"code": "1432: \n1433: \tif err := os.WriteFile(path, data, 0644); err != nil {\n1434: \t\treturn fmt.Errorf(\"failed to write output file: %w\", err)\n",
+			"line": "1433",
+			"column": "12",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/new.go",
+			"code": "1420: \n1421: \tif err := os.WriteFile(filepath.Join(finalDir, defaultPublicNotesFile), []byte(artifacts.PublicNotesText), 0644); err != nil {\n1422: \t\treturn fmt.Errorf(\"failed to write %s: %w\", defaultPublicNotesFile, err)\n",
+			"line": "1421",
+			"column": "12",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/new.go",
+			"code": "1416: \n1417: \tif err := os.WriteFile(filepath.Join(finalDir, defaultTermsFilename), []byte(artifacts.TermsMarkdown), 0644); err != nil {\n1418: \t\treturn fmt.Errorf(\"failed to write %s: %w\", defaultTermsFilename, err)\n",
+			"line": "1417",
+			"column": "12",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/init.go",
+			"code": "114: \t\t\tspecPath := filepath.Join(outputDir, \"quote_template.json\")\n115: \t\t\tif err := os.WriteFile(specPath, specJSON, 0644); err != nil {\n116: \t\t\t\treturn fmt.Errorf(\"failed to write sample spec: %w\", err)\n",
+			"line": "115",
+			"column": "14",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/init.go",
+			"code": "44: \t\t\tconfigPath := filepath.Join(ninjopsDir, \"config.toml\")\n45: \t\t\tif err := os.WriteFile(configPath, []byte(configContent), 0644); err != nil {\n46: \t\t\t\treturn fmt.Errorf(\"failed to write config file: %w\", err)\n",
+			"line": "45",
+			"column": "14",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "70: \t\t\t\tgeneratedJSON, _ := json.MarshalIndent(artifacts, \"\", \"  \")\n71: \t\t\t\tif err := os.WriteFile(filepath.Join(outDir, \"generated.json\"), generatedJSON, 0644); err != nil {\n72: \t\t\t\t\treturn fmt.Errorf(\"failed to write generated.json: %w\", err)\n",
+			"line": "71",
+			"column": "15",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "65: \t\t\t\tnotes, _ := formatter.FormatNotes(artifacts)\n66: \t\t\t\tif err := os.WriteFile(filepath.Join(outDir, \"notes.txt\"), []byte(notes), 0644); err != nil {\n67: \t\t\t\t\treturn fmt.Errorf(\"failed to write notes: %w\", err)\n",
+			"line": "66",
+			"column": "15",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "60: \t\t\t\tterms, _ := formatter.FormatTerms(artifacts)\n61: \t\t\t\tif err := os.WriteFile(filepath.Join(outDir, \"terms.md\"), []byte(terms), 0644); err != nil {\n62: \t\t\t\t\treturn fmt.Errorf(\"failed to write terms: %w\", err)\n",
+			"line": "61",
+			"column": "15",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "55: \t\t\t\tproposal, _ := formatter.FormatProposal(artifacts)\n56: \t\t\t\tif err := os.WriteFile(filepath.Join(outDir, \"proposal.md\"), []byte(proposal), 0644); err != nil {\n57: \t\t\t\t\treturn fmt.Errorf(\"failed to write proposal: %w\", err)\n",
+			"line": "56",
+			"column": "15",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/data/repos/ninjops/internal/app/assist.go",
+			"code": "104: \n105: \t\t\t\tif err := os.WriteFile(inputFile, updatedJSON, 0644); err != nil {\n106: \t\t\t\t\treturn fmt.Errorf(\"failed to write file: %w\", err)\n",
+			"line": "105",
+			"column": "15",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/invoiceninja/models.go",
+			"code": "55: \tif resp.StatusCode \u003e= 200 \u0026\u0026 resp.StatusCode \u003c 300 {\n56: \t\tresp.Body.Close()\n57: \t\treturn nil\n",
+			"line": "56",
+			"column": "3",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/httpx/client.go",
+			"code": "106: \t\tif c.shouldRetry(resp.StatusCode, nil) {\n107: \t\t\tresp.Body.Close()\n108: \t\t\tlastErr = fmt.Errorf(\"server returned status %d\", resp.StatusCode)\n",
+			"line": "107",
+			"column": "4",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/httpx/client.go",
+			"code": "92: \t\t\t}\n93: \t\t\treq.Body.Close()\n94: \t\t\treq.Body = io.NopCloser(bytes.NewBuffer(bodyBytes))\n",
+			"line": "93",
+			"column": "4",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/validate.go",
+			"code": "64: \n65: \tcmd.MarkFlagRequired(\"input\")\n66: \n",
+			"line": "65",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/serve.go",
+			"code": "224: \tw.Header().Set(\"Content-Type\", \"application/json\")\n225: \tjson.NewEncoder(w).Encode(result)\n226: }\n",
+			"line": "225",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/serve.go",
+			"code": "154: \tw.Header().Set(\"Content-Type\", \"application/json\")\n155: \tjson.NewEncoder(w).Encode(response)\n156: }\n",
+			"line": "155",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/serve.go",
+			"code": "81: \tw.Header().Set(\"Content-Type\", \"application/json\")\n82: \tjson.NewEncoder(w).Encode(artifacts)\n83: }\n",
+			"line": "82",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/serve.go",
+			"code": "53: \tw.Header().Set(\"Content-Type\", \"application/json\")\n54: \tjson.NewEncoder(w).Encode(map[string]string{\"status\": \"ok\"})\n55: }\n",
+			"line": "54",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/ninja_sync.go",
+			"code": "162: \n163: \tcmd.MarkFlagRequired(\"input\")\n164: \n",
+			"line": "163",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/ninja_sync.go",
+			"code": "92: \t\t\t\tvar response string\n93: \t\t\t\tfmt.Scanln(\u0026response)\n94: \t\t\t\tif response != \"y\" \u0026\u0026 response != \"Y\" {\n",
+			"line": "93",
+			"column": "5",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/ninja_diff.go",
+			"code": "102: \n103: \tcmd.MarkFlagRequired(\"input\")\n104: \n",
+			"line": "103",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/generate.go",
+			"code": "97: \n98: \tcmd.MarkFlagRequired(\"input\")\n99: \n",
+			"line": "98",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/data/repos/ninjops/internal/app/assist.go",
+			"code": "125: \n126: \tcmd.MarkFlagRequired(\"input\")\n127: \n",
+			"line": "126",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		}
+	],
+	"Stats": {
+		"files": 42,
+		"lines": 9803,
+		"nosec": 0,
+		"found": 48
+	},
+	"GosecVersion": "dev"
+}

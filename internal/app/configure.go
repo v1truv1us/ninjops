@@ -122,10 +122,10 @@ func newConfigureCmd() *cobra.Command {
 				return fmt.Errorf("failed to serialize auth credentials: %w", err)
 			}
 
-			if err := os.MkdirAll(filepath.Dir(configPath), 0755); err != nil {
+			if err := os.MkdirAll(filepath.Dir(configPath), 0750); err != nil {
 				return fmt.Errorf("failed to create config directory: %w", err)
 			}
-			if err := os.MkdirAll(filepath.Dir(authCredsPath), 0755); err != nil {
+			if err := os.MkdirAll(filepath.Dir(authCredsPath), 0750); err != nil {
 				return fmt.Errorf("failed to create auth credentials directory: %w", err)
 			}
 
